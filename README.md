@@ -13,7 +13,7 @@ $ composer require advans/php-api-pdf
 
 ````
 $service_pdf = new \Advans\Api\Pdf\Pdf([
-    'base_url' => 'https://ws40.advans.mx/api-pdf/',
+    'base_url' => '*************************',
     'key' => '**********************'
 ]);
 

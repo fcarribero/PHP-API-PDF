@@ -25,12 +25,16 @@ class Pdf {
         }
     }
 
-    public function status() {
-        return json_decode($this->call('status'));
+    public function version() {
+        return $this->call('version');
     }
 
-    public function metrics() {
+    public function getRawMetrics() {
         return json_decode($this->call('metrics'));
+    }
+
+    public function getSummaryMetrics() {
+        return json_decode($this->call('metrics/summary'));
     }
 
     public function fromFormatObject($fo) {

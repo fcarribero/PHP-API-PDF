@@ -44,7 +44,9 @@ class Pdf {
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => $verb,
             CURLOPT_POSTFIELDS => $postfields,
-            CURLOPT_XOAUTH2_BEARER => $this->config->key,
+            CURLOPT_HTTPHEADER => [
+                'Authorization: Bearer ' . $this->config->key
+            ],
         ]);
         if (!($result = @curl_exec($curl))) {
             throw new PdfException('Error de conexión');
